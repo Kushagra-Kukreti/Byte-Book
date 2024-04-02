@@ -4,15 +4,22 @@ import {
   Skeleton,
   SkeletonCircle,
   VStack,
+  useDisclosure
 } from "@chakra-ui/react";
 import ProfileHeader from "../../components/Profile/ProfileHeader";
 import ProfileTabs from "../../components/Profile/ProfileTabs";
 import ProfilePosts from "../../components/Profile/ProfilePosts";
 import { useEffect, useState } from "react";
+import EditProfile from "../../components/Profile/EditProfile";
 
 const ProfilePage = () => {
   const [loading, setLoading] = useState(true);
-  useEffect(() => {setTimeout(()=>{setLoading(false)},4000)}, []);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  }, []);
   return (
     <Container maxW="container.lg" py={5}>
       <Flex
@@ -23,8 +30,7 @@ const ProfilePage = () => {
         mx={"auto"}
         flexDirection={"column"}
       >
-		{loading?<ProfileHeaderSkeleton />: <ProfileHeader />}
-       
+        {loading ? <ProfileHeaderSkeleton /> : <ProfileHeader />}
       </Flex>
       <Flex
         px={{ base: 2, sm: 4 }}
@@ -36,6 +42,7 @@ const ProfilePage = () => {
       >
         <ProfileTabs />
         <ProfilePosts />
+        <EditProfile isOpen ={isOpen} onClose = {onClose}/>
       </Flex>
     </Container>
   );

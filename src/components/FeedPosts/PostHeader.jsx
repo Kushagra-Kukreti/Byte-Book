@@ -1,16 +1,23 @@
-import {Avatar, Box, Button, Flex, Skeleton, SkeletonCircle } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  Button,
+  Flex,
+  Skeleton,
+  SkeletonCircle,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-const PostHeader = ({img,name}) => {
+const PostHeader = ({ img, name }) => {
   const [isFollowing, setIsFollowing] = useState(false);
   const [isLoading, setIsloading] = useState(true);
 
-  useEffect(()=>{
-   setTimeout(()=>{
-     setIsloading(false)
-   },4000)
-  },[])
+  useEffect(() => {
+    setTimeout(() => {
+      setIsloading(false);
+    }, 3000);
+  }, []);
 
   return (
     <Flex
@@ -20,19 +27,18 @@ const PostHeader = ({img,name}) => {
       my={2}
     >
       <Flex alignItems={"center"} gap={2}>
-        {isLoading ? <SkeletonCircle size="10" /> : <Avatar
-      size='xs'
-      name={name}
-      src={img}
-    />}
+        {isLoading ? (
+          <SkeletonCircle size="10" />
+        ) : (
+          <Avatar size="xs" name={name} src={img} />
+        )}
         {isLoading ? (
           <Flex fontSize={12} fontWeight={"bold"} gap="2">
             <Skeleton w={"100px"} h={"10px"} />
-            <Box color={"gray.500"}>• 1m ago</Box>
           </Flex>
         ) : (
-			<Flex fontSize={12} fontWeight={"bold"} gap="2">
-             <h6>{name}</h6>
+          <Flex fontSize={12} fontWeight={"bold"} gap="2">
+            <h6>{name}</h6>
             <Box color={"gray.500"}>• 1m ago</Box>
           </Flex>
         )}

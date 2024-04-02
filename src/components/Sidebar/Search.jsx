@@ -16,10 +16,17 @@ import {
 } from "@chakra-ui/react";
 import { SearchLogo } from "../../assets/constants";
 import { useRef } from "react";
+import SuggestedUser from "../SuggestedUsers/SuggestedUser";
+
+
 
 const Search = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const searchRef = useRef(null);
+
+	const onSuggestedClick = ()=>{
+       onClose();
+	}
 
 	const handleSearchUser = (e) => {
 		e.preventDefault();
@@ -68,8 +75,17 @@ const Search = () => {
 								</Button>
 							</Flex>
 						</form>
-					
+
+                <Flex direction={"column"} gap={2}>
+				<SuggestedUser name ={"Avinash"} img={"/img1.jpg"}  onSuggestedClick = {onSuggestedClick} />
+				<SuggestedUser name ={"Aishwarya"} img={"/img2.jpg"} onSuggestedClick = {onSuggestedClick}  />
+				<SuggestedUser name ={"Supriya"} img={"/img3.jpg"}   onSuggestedClick = {onSuggestedClick}/>
+				<SuggestedUser name ={"Aishwarya"} img={"/img2.jpg"} onSuggestedClick = {onSuggestedClick} />
+				<SuggestedUser name ={"Supriya"} img={"/img3.jpg"}  onSuggestedClick = {onSuggestedClick}/>
+				</Flex>
 					</ModalBody>
+
+					 
 				</ModalContent>
 			</Modal>
 		</>

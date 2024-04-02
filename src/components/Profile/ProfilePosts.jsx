@@ -49,9 +49,81 @@ const ProfilePosts = () => {
               <Box h="300px">contents wrapped</Box>
             </Skeleton>
           </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
+          <VStack alignItems={"flex-start"} gap={4}>
+            <Skeleton w={"full"}>
+              <Box h="300px">contents wrapped</Box>
+            </Skeleton>
+          </VStack>
         </>
       ) : (
         <>
+          <ProfilePost image={"/img1.jpg"} />
+          <ProfilePost image={"/img2.jpg"} />
+          <ProfilePost image={"/img3.jpg"} />
+          <ProfilePost image={"/img4.jpg"} />
+          <ProfilePost image={"/img1.jpg"} />
+          <ProfilePost image={"/img2.jpg"} />
+          <ProfilePost image={"/img3.jpg"} />
+          <ProfilePost image={"/img4.jpg"} />
+          <ProfilePost image={"/img1.jpg"} />
+          <ProfilePost image={"/img2.jpg"} />
+          <ProfilePost image={"/img3.jpg"} />
+          <ProfilePost image={"/img4.jpg"} />
           <ProfilePost image={"/img1.jpg"} />
           <ProfilePost image={"/img2.jpg"} />
           <ProfilePost image={"/img3.jpg"} />

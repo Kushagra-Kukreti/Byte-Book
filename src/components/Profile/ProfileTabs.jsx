@@ -1,7 +1,11 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
+import { useState } from "react";
 import { BsBookmark, BsGrid3X3, BsSuitHeart } from "react-icons/bs";
 
 const ProfileTabs = () => {
+
+	const activeClass = "1px solid white";
+    const [activeTab,setActiveTab] = useState("Posts");
 	return (
 		<Flex
 			w={"full"}
@@ -10,7 +14,7 @@ const ProfileTabs = () => {
 			textTransform={"uppercase"}
 			fontWeight={"bold"}
 		>
-			<Flex borderTop={"1px solid white"} alignItems={"center"} p='3' gap={1} cursor={"pointer"}>
+			<Flex onClick={()=>setActiveTab("Posts")} borderTop={activeTab === "Posts"?activeClass:""} alignItems={"center"} p='3' gap={1} cursor={"pointer"}>
 				<Box fontSize={20}>
 					<BsGrid3X3 />
 				</Box>
@@ -19,7 +23,7 @@ const ProfileTabs = () => {
 				</Text>
 			</Flex>
 
-			<Flex alignItems={"center"} p='3' gap={1} cursor={"pointer"}>
+			{/* <Flex onClick={()=>setActiveTab("Saved")} borderTop={activeTab === "Saved"?activeClass:""} alignItems={"center"} p='3' gap={1} cursor={"pointer"}>
 				<Box fontSize={20}>
 					<BsBookmark />
 				</Box>
@@ -28,14 +32,14 @@ const ProfileTabs = () => {
 				</Text>
 			</Flex>
 
-			<Flex alignItems={"center"} p='3' gap={1} cursor={"pointer"}>
+			<Flex onClick={()=>setActiveTab("Likes")} borderTop={activeTab === "Likes"?activeClass:""} alignItems={"center"} p='3' gap={1} cursor={"pointer"}>
 				<Box fontSize={20}>
 					<BsSuitHeart fontWeight={"bold"} />
 				</Box>
 				<Text fontSize={12} display={{ base: "none", sm: "block" }}>
 					Likes
 				</Text>
-			</Flex>
+			</Flex> */}
 		</Flex>
 	);
 };

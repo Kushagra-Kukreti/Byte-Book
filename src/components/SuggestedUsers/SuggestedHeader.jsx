@@ -8,10 +8,10 @@ const SuggestedHeader = () => {
 	return (
 		<Flex justifyContent={"space-between"} alignItems={"center"} w={"full"}>
 			<Flex alignItems={"center"} gap={2}>
-				<Link to={"/"}>
+				<Link to={"/user"}>
 					<Avatar size={"lg"} src={"/profile_pic.png"} />
 				</Link>
-				<Link to={"/"}>
+				<Link to={"/user"}>
 					<Text fontSize={12} fontWeight={"bold"}>
 						{"TEAM_KN"}
 					</Text>

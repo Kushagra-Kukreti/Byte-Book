@@ -1,11 +1,19 @@
 import { Avatar, AvatarGroup, Button, Flex, Text, VStack, useDisclosure } from "@chakra-ui/react";
 import EditProfile from "./EditProfile";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const ProfileHeader = () => { 
 	const { isOpen, onOpen, onClose } = useDisclosure();
-    const [isFollowing,setIsFollowing] = useState(false)
+    const [isFollowing,setIsFollowing] = useState(false);
+	const [followerCount,setFollowerCount] = useState(100);
+
+	useEffect(()=>{
+      if(isFollowing){
+		setFollowerCount(followerCount+1);
+	  }
+	  else setFollowerCount(followerCount-1);
+	},[isFollowing])
 	return (
 		<Flex gap={{ base: 4, sm: 10 }} py={10} direction={{ base: "column", sm: "row" }}>
 			<AvatarGroup size={{ base: "xl", md: "2xl" }} justifySelf={"center"} alignSelf={"flex-start"} mx={"auto"}>
@@ -58,7 +66,7 @@ const ProfileHeader = () => {
 					</Text>
 					<Text fontSize={{ base: "xs", md: "sm" }}>
 						<Text as='span' fontWeight={"bold"} mr={1}>
-							{"4"}
+							{followerCount}
 						</Text>
 						Followers
 					</Text>
@@ -70,11 +78,11 @@ const ProfileHeader = () => {
 					</Text>
 				</Flex>
 				<Flex alignItems={"center"} gap={4}>
-					<Text fontSize={"sm"} fontWeight={"bold"}>
-						{"4"}
-					</Text>
+					{/* <Text fontSize={"sm"} fontWeight={"bold"}>
+						{"Hell"}
+					</Text> */}
 				</Flex>
-				<Text fontSize={"sm"}>{"This is user bio "}</Text>
+				<Text fontSize={"sm"}>{"This is a platform to make you better developers"}</Text>
 			</VStack>
 			{isOpen && <EditProfile isOpen={isOpen} onClose={onClose} />}
 		</Flex>
